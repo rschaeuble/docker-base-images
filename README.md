@@ -1,5 +1,4 @@
 # docker-base-images
-Docker Base Images
 
 This project provides base images for more specialized Docker images.
 
