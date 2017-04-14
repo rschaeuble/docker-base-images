@@ -1,0 +1,12 @@
+FROM ubuntu:xenial
+
+RUN \
+  apt-get -y update && \
+  apt-get -y install curl vim less man && \
+  \
+  curl -L -o /tmp/dumb-init.deb https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb && \
+  dpkg -i /tmp/dumb-init.deb && \
+  rm /tmp/dumb-init.deb && \
+  \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
